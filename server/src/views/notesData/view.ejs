@@ -1,0 +1,32 @@
+<%- include('../header') %>
+
+	<div class = "col-12">
+		<h1>Notes</h1>
+		<a href="/notes/add" class="btn btn-primary mb-2">Agregar</a>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<!-- <th>ID</th> -->
+				<th>NOTE</th>
+				<th>DATE</th>
+				<th>UPDATE</th>
+				<th>DELETE</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% notes.forEach(notes => { %>
+				<tr>
+					<!-- <td><%= notes.id %></td> -->
+					<td><%= notes.note %></td>
+					<td><%= notes.time %></td>
+					<td><a href="/notes/edit" class="btn btn-warning">Edit</a></td>
+					<td><a href="/notes/delete/<%= notes.id %>" class="btn btn-danger">Delete</a></td>
+				</tr>
+			<% }) %>
+		</tbody>
+	</table>
+</div>
+
+<%- include('../footer') %>
